@@ -1,6 +1,6 @@
 <?php
 $mysqli = new mysqli();
-$mysqli->connect('Hostname', 'DBusername', 'DBpassword', 'DBname');
+$mysqli->connect('localhost', 'root', '', '9gag');
 
 //Hostname - normaly localhost
 //DBusername - your mysql username

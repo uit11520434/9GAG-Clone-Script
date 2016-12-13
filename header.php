@@ -66,7 +66,7 @@ if($pageName == '/about_us.html'){
 } else if($pageName ==  '/hot.html'){
 	$pageTitle = 'Hot | ';
 } else if($pageName ==  '/trending.html'){
-$pageTitle = 'Trending | ';
+$pageTitle = 'Thịnh hành | ';
 } else if($pageName ==  '/fresh.html'){
 $pageTitle = 'Fresh | ';		
 } else {
@@ -217,11 +217,10 @@ $('#top').click(function (e) {
 
 <nav id="main-menu">
 <ul>
-   <li><a href="index.html"><span>Home</span></a></li>
-   <li><a href="hot.html"><span>Hot</span></a></li>
-   <li><a href="trending.html"><span>Trending</span></a></li>
-   <li><a href="fresh.html"><span>Fresh</span></a></li>
-   <li class="has-sub"><a href="#"><span>More</span></a>
+   <li><a href="new.html"><span>Mới</span></a></li>
+   <li><a href="hot.html"><span>Nổi bật</span></a></li>
+   <li><a href="trending.html"><span>Thịnh Hành</span></a></li>
+   <li class="has-sub"><a href="#"><span>Xem thêm</span></a>
       <ul>
          <li><a href="gif.html"><span>GIF</span></a></li>
          <?php
@@ -256,56 +255,28 @@ if($CatSql = $mysqli->query("SELECT id, cname FROM categories")){
 </div><!--header-left-->
 <div class="header-right">
 
-<nav id="user-menu">
-<ul>
-<?php if(!isset($_SESSION['username'])){?>
-   <li><a href="login.html" class="login-links"><span>Log in</span></a></li>
-   <li><a href="register.html" class="login-links"><span>Sign up</span></a></li>
-   <li class="red-btton"><a href="login.html" class="login-links"><span>Upload</span></a></li>
-<?php }else{ ?>
-<li><a href="" class="has-sub"><span><?php echo ucfirst($_SESSION['username']);?></span></a>
-<ul>
-         <li><a href="profile-<?php echo $Uid;?>-<?php echo $UsName;?>.html"><span>Profile</span></a></li>
-         <li><a href="settings.html"><span>Settings</span></a></li>
-         <li><a href="logout.html"><span>Logout</span></a></li>
-      </ul>
-   </li>
-   <li class="red-btton"><a><span>Upload</span></a>
-     <ul>
-         <li><a href="submit_image.html" class="pop-uplink"><span>Upload Image</span></a></li>
-         <li><a href="submit_video.html" class="pop-uplink"><span>Submit Video</span></a></li>
-      </ul>
-   </li>
-<?php }?>   
-</ul>
-</nav><!--user-menu-->
-
-
 </div><!--header-right-->
 </div><!--center-header-->
 </div><!--top-header-->
 <div id="bottom-header">
 <div class="center-header">
-<div class="header-bottom-left"><div id="slogan"><?php echo $settings['name'];?> is your best source of fun.</div>
-
+<div class="header-bottom-left"><div id="slogan"><?php echo $settings['name'];?></div>
 <div id="social-love">
 <div id="fb-button-div">
 <div class="fb-like" data-href="<?php echo $settings['fbpage'];?>" data-width="50px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>        
 </div>
-
 <div id="twitter-button-div">
-<a href="<?php echo $settings['twitter'];?>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-lang="en"><?php echo $settings['name']; ?></a>
-
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a href="https://twitter.com/hayvl" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @hayvl</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div><!--twitter-button-div-->
 
 <div id="google-button-div">
+<!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
+<div class="g-plusone" data-size="medium"></div>
 
-<!-- Place this tag where you want the widget to render. -->
-<div class="g-follow" data-annotation="none" data-height="20" data-href="<?php echo $settings['gplus'];?>" data-rel="author"></div>
-
-<!-- Place this tag after the last widget tag. -->
+<!-- Đặt thẻ này sau thẻ Nút +1 cuối cùng. -->
 <script type="text/javascript">
+  window.___gcfg = {lang: 'vi'};
+
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
     po.src = 'https://apis.google.com/js/platform.js';
@@ -321,8 +292,8 @@ if($CatSql = $mysqli->query("SELECT id, cname FROM categories")){
 
 <div id="search-box">
 <form name="search" id="search" method="get" action="search.php">
-<input type="text" tabindex="1" class="input" id="term" name="term" placeholder="Search for Something Fun.."/>
-<button type="submit" tabindex="2" class="search-button" id="submit">Search</button>
+<input type="text" tabindex="1" class="input" id="term" name="term" placeholder="Nhập từ khóa.."/>
+<button type="submit" tabindex="2" class="search-button" id="submit">Tìm kiếm</button>
 </form>
 </div>
 
