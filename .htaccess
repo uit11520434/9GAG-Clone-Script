@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteRule all-([0-9]+)\.html$ all.php?page=$1 [L]
+RewriteRule profile-([0-9]+)-(.*)\.html$ profile.php?id=$1&user=$2 [L]
+RewriteRule upvote-([0-9]+)-(.*)\.html$ upvote.php?id=$1&user=$2 [L]
+RewriteRule comments-([0-9]+)-(.*)\.html$ comments.php?id=$1&user=$2 [L]
+RewriteRule post-([0-9]+)-(.*)\.html$ post.php?id=$1&title=$2 [L]
+RewriteRule category-([0-9]+)-(.*)-([0-9]+)\.html$ category.php?cid=$1&name=$2&page=$3 [L]
+RewriteRule userq-([0-9]+)-([0-9]+)\.html$ userq.php?id=$1&page=$2 [L]
+RewriteRule usera-([0-9]+)-([0-9]+)\.html$ usera.php?id=$1&page=$2 [L]
+RewriteRule ^(.*)\.html$ $1.php [L]
+
+ErrorDocument 404 /404.html
